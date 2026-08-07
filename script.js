@@ -5,49 +5,52 @@
 const menu = document.querySelector("#menu");
 const navbar = document.querySelector(".navbar");
 
-menu.onclick = () => {
-
-    navbar.classList.toggle("active");
-
-};
+if (menu && navbar) {
+    menu.onclick = () => {
+        navbar.classList.toggle("active");
+    };
+}
 
 // Close menu when clicking a link
 
-document.querySelectorAll(".navbar a").forEach(link => {
+const navLinkElements = document.querySelectorAll(".navbar a");
 
-    link.onclick = () => {
-
-        navbar.classList.remove("active");
-
-    };
-
-});
+if (navbar) {
+    navLinkElements.forEach(link => {
+        link.onclick = () => {
+            navbar.classList.remove("active");
+        };
+    });
+}
 
 // ==========================================
 // DARK MODE
 // ==========================================
 
-const themeToggle = document.querySelector("#theme-toggle");
+const themeToggle = document.getElementById("theme-toggle");
 
-themeToggle.onclick = () => {
+if (themeToggle) {
 
-    document.body.classList.toggle("dark-mode");
+    themeToggle.addEventListener("click", () => {
 
-    if(document.body.classList.contains("dark-mode")){
+        document.body.classList.toggle("dark-mode");
 
-        localStorage.setItem("theme","dark");
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            localStorage.setItem("theme", "light");
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
 
-        themeToggle.innerHTML='<i class="fas fa-sun"></i>';
+    });
 
-    }else{
-
-        localStorage.setItem("theme","light");
-
-        themeToggle.innerHTML='<i class="fas fa-moon"></i>';
-
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
 
-};
+}
 
 // Load saved theme
 
@@ -57,7 +60,9 @@ window.onload = () => {
 
         document.body.classList.add("dark-mode");
 
-        themeToggle.innerHTML='<i class="fas fa-sun"></i>';
+        if (themeToggle) {
+            themeToggle.innerHTML='<i class="fas fa-sun"></i>';
+        }
 
     }
 
@@ -137,7 +142,9 @@ function typeEffect(){
 
 }
 
-typeEffect();
+if (typing) {
+    typeEffect();
+}
 
 // ==========================================
 // SCROLL TO TOP
@@ -145,31 +152,33 @@ typeEffect();
 
 const topBtn=document.getElementById("topBtn");
 
-window.addEventListener("scroll",()=>{
+if (topBtn) {
+    window.addEventListener("scroll",()=>{
 
-    if(window.scrollY>400){
+        if(window.scrollY>400){
 
-        topBtn.style.display="block";
+            topBtn.style.display="block";
 
-    }else{
+        }else{
 
-        topBtn.style.display="none";
+            topBtn.style.display="none";
 
-    }
-
-});
-
-topBtn.onclick=()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
+        }
 
     });
 
-};
+    topBtn.onclick=()=>{
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    };
+}
 
 // ==========================================
 // STICKY HEADER
@@ -177,19 +186,21 @@ topBtn.onclick=()=>{
 
 const header=document.querySelector("header");
 
-window.addEventListener("scroll",()=>{
+if (header) {
+    window.addEventListener("scroll",()=>{
 
-    if(window.scrollY>80){
+        if(window.scrollY>80){
 
-        header.style.boxShadow="0 5px 20px rgba(0,0,0,.15)";
+            header.style.boxShadow="0 5px 20px rgba(0,0,0,.15)";
 
-    }else{
+        }else{
 
-        header.style.boxShadow="none";
+            header.style.boxShadow="none";
 
-    }
+        }
 
-});
+    });
+}
 // ==========================================
 // SCROLL REVEAL ANIMATION
 // ==========================================
@@ -354,31 +365,22 @@ window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
 
     if (loader) {
-
-        loader.style.opacity = "0";
-
-        setTimeout(() => {
-
-            loader.style.display = "none";
-
-        }, 500);
-
+        loader.style.display = "none";
     }
 
+});
 
 
 // ==========================================
 // COPYRIGHT YEAR
 // ==========================================
 
+
 const copyright = document.querySelector(".copyright");
 
 if (copyright) {
-
     const year = new Date().getFullYear();
-
     copyright.innerHTML = `© ${year} Amarnath M. All Rights Reserved.`;
-
 }
 
 

@@ -4,66 +4,95 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Amarnath M | AI & Data Science Portfolio</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Amarnath M | AI & Data Science Portfolio">
+
+    <title> 
+        Amarnath M | AI & Data Science
+    </title>
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+
+    <a href="#home" class="logo">
+
+        Amarnath <span>M</span>
+
+    </a>
 
     <nav class="navbar">
 
-        <div class="logo">
+        <a href="#home">Home</a>
 
-            Amarnath<span>.</span>
+        <a href="#about">About</a>
 
-        </div>
+        <a href="#education">Education</a>
 
-        <ul class="nav-links">
+        <a href="#skills">Skills</a>
 
-            <li><a href="#home">Home</a></li>
+        <a href="#internship">Internship</a>
 
-            <li><a href="#about">About</a></li>
+        <a href="#projects">Projects</a>
 
-            <li><a href="#education">Education</a></li>
-
-            <li><a href="#skills">Skills</a></li>
-
-            <li><a href="#internship">Internship</a></li>
-
-            <li><a href="#projects">Projects</a></li>
-
-            <li><a href="#certificates">Certificates</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-        <button id="theme-btn">
-
-            <i class="fa-solid fa-moon"></i>
-
-        </button>
-
-        <div class="menu-btn">
-
-            <i class="fa-solid fa-bars"></i>
-
-        </div>
+        <a href="#contact">Contact</a>
 
     </nav>
 
+    <div class="nav-icons">
+
+        <a href="https://github.com/amarnath312004-ai" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-linkedin"></i>
+        </a>
+
+        <button id="theme-toggle">
+
+            <i class="fas fa-moon"></i>
+
+        </button>
+
+        <div id="menu">
+
+            <i class="fas fa-bars"></i>
+
+        </div>
+
+    </div>
+
 </header>
 
-<!-- HERO -->
+<!-- ================= HOME ================= -->
 
 <section id="home" class="hero">
 
@@ -75,30 +104,28 @@
 
         <h2>
 
-            <span id="typing"></span>
+            <span class="typing">AI & Data Science Student</span>
 
         </h2>
 
         <p>
 
-            Artificial Intelligence & Data Science Student,
-            Python Programmer,
-            Full Stack Web Developer,
-            and Machine Learning Enthusiast passionate about building AI-powered applications.
+            Passionate AI & Data Science student with
+            strong interests in Artificial Intelligence,
+            Machine Learning, Computer Vision,
+            Python Development and Full Stack Web Development.
 
         </p>
 
         <div class="hero-buttons">
 
-            <a href="#projects" class="btn">
+            <a href="resume.pdf"
+                download
+                class="btn outline">
 
-                View Projects
+                <i class="fas fa-download"></i>
 
-            </a>
-
-            <a href="resume.pdf" download class="btn outline">
-
-                Download Resume
+                Resume
 
             </a>
 
@@ -106,21 +133,21 @@
 
         <div class="social-icons">
 
-            <a href="https://github.com/amarnath312004-ai" target="_blank">
+            <a href="https://github.com/amarnath312004-ai"
+                target="_blank" rel="noopener noreferrer">
 
                 <i class="fab fa-github"></i>
 
             </a>
 
-            <a href="https://www.linkedin.com/in/amarnath-m-8aa44235b " target="_blank">
-
+            <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
 
             </a>
 
-            <a href="mailto:amarnath312004mail@gmail.com">
+            <a href="mailto:amarnath312004@gmail.com">
 
-                <i class="fa-solid fa-envelope"></i>
+                <i class="fas fa-envelope"></i>
 
             </a>
 
@@ -130,13 +157,13 @@
 
     <div class="hero-image">
 
-        <img src="images/profile.jpg" alt="Amarnath">
+        <img src="profile.jpg" alt="Profile">
 
     </div>
 
 </section>
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
@@ -146,110 +173,236 @@
 
     </h2>
 
-    <p>
+    <div class="about-container">
 
-        I am currently pursuing a Bachelor of Technology in
-        Artificial Intelligence & Data Science at
-        Francis Xavier Engineering College.
+        <div class="about-image">
 
-        I enjoy developing Artificial Intelligence applications,
-        Machine Learning models,
-        responsive websites,
-        and Python software.
+            <img src="profile.jpg" alt="Profile">
 
-        My objective is to become a Software Engineer in a product-based company
-        and contribute to innovative AI solutions.
+        </div>
 
-    </p>
+        <div class="about-content">
+
+            <h3>
+
+                AI & Data Science Student
+
+            </h3>
+
+            <p>
+
+                I am currently pursuing a Bachelor of Technology
+                in Artificial Intelligence and Data Science at
+                Francis Xavier Engineering College, Tirunelveli.
+
+            </p>
+
+            <p>
+
+                I enjoy developing Artificial Intelligence applications,
+                Machine Learning models, Computer Vision systems,
+                and modern responsive web applications.
+
+            </p>
+
+            <p>
+
+                My goal is to become a Software Engineer in a
+                leading product-based company where I can contribute
+                to innovative AI solutions.
+
+            </p>
+
+            <div class="about-info">
+
+                <div>
+
+                    <strong>Name :</strong>
+
+                    Amarnath M
+
+                </div>
+
+                <div>
+
+                    <strong>Degree :</strong>
+
+                    B.Tech AI & Data Science
+
+                </div>
+
+                <div>
+
+                    <strong>Email :</strong>
+
+                    amarnath312004@gmail.com
+
+                </div>
+
+                <div>
+
+                    <strong>Location :</strong>
+
+                    Tamil Nadu, India
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
-
-<!-- EDUCATION -->
+<!-- ================= EDUCATION ================= -->
 
 <section id="education">
 
-    <h2 class="title">
+    <h2 class="title">Education</h2>
 
-        Education
+    <div class="education-container">
 
-    </h2>
+        <!-- B.Tech -->
 
-    <div class="card">
+        <div class="education-card">
 
-        <h3>
+            <i class="fa-solid fa-graduation-cap"></i>
 
-            Bachelor of Technology
+            <h3>B.Tech - Artificial Intelligence & Data Science</h3>
 
-        </h3>
+            <h4>Francis Xavier Engineering College</h4>
 
-        <h4>
+            <p><strong>Duration:</strong> 2024 - 2027</p>
 
-            Artificial Intelligence & Data Science
+            <p>
 
-        </h4>
+                Pursuing Bachelor of Technology in Artificial Intelligence
+                and Data Science with interests in Machine Learning,
+                Computer Vision, Deep Learning and Full Stack Development.
 
-        <p>
+            </p>
 
-            Francis Xavier Engineering College
+        </div>
 
-        </p>
+        <!-- Diploma -->
 
-        <p>
+        <div class="education-card">
 
-            2024 - Present
+            <i class="fa-solid fa-building-columns"></i>
 
-        </p>
+            <h3>Diploma in Electrical & Electronics Engineering</h3>
+
+            <h4>Government Polytechnic College, Coimbatore</h4>
+
+            <p><strong>Percentage:</strong> 78%</p>
+
+            <p>
+
+                Successfully completed Diploma in Electrical and
+                Electronics Engineering with practical knowledge
+                in electrical systems, automation and electronics.
+
+            </p>
+
+        </div>
+
+        <!-- SSLC -->
+
+        <div class="education-card">
+
+            <i class="fa-solid fa-school"></i>
+
+            <h3>SSLC</h3>
+
+            <h4>Ken Bridge CBSE School</h4>
+
+            <p><strong>Percentage:</strong> 60.6%</p>
+
+            <p>
+
+                Completed Secondary School Education with
+                a strong foundation in Mathematics,
+                Science and Computer Fundamentals.
+
+            </p>
+
+        </div>
 
     </div>
 
 </section>
 
-<!-- SKILLS -->
+<!-- ================= SKILLS ================= -->
 
 <section id="skills">
 
-    <h2 class="title">
-
-        Technical Skills
-
-    </h2>
+    <h2 class="title">Technical Skills</h2>
 
     <div class="skills-grid">
 
-        <div class="skill">Python</div>
+        <div class="skill-card">
 
-        <div class="skill">C Programming</div>
+            <i class="fab fa-python"></i>
 
-        <div class="skill">HTML</div>
+            <h3>Python</h3>
 
-        <div class="skill">CSS</div>
+            <p>Advanced</p>
 
-        <div class="skill">JavaScript</div>
+        </div>
 
-        <div class="skill">Bootstrap</div>
+        <div class="skill-card">
 
-        <div class="skill">Flask</div>
+            <i class="fa-solid fa-brain"></i>
 
-        <div class="skill">SQL</div>
+            <h3>Machine Learning</h3>
 
-        <div class="skill">Git</div>
+            <p>Intermediate</p>
 
-        <div class="skill">GitHub</div>
+        </div>
 
-        <div class="skill">Machine Learning</div>
+        <div class="skill-card">
 
-        <div class="skill">Artificial Intelligence</div>
+            <i class="fa-solid fa-eye"></i>
+
+            <h3>Computer Vision</h3>
+
+            <p>Intermediate</p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <i class="fa-solid fa-database"></i>
+
+            <h3>SQL</h3>
+
+            <p>Intermediate</p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <i class="fab fa-git-alt"></i>
+
+            <h3>Git & GitHub</h3>
+
+            <p>Intermediate</p>
+
+        </div>
 
     </div>
 
 </section>
+
 <!-- ================= INTERNSHIP ================= -->
 
 <section id="internship">
 
     <h2 class="title">Internship Experience</h2>
 
-    <div class="card">
+    <div class="internship-card">
+
+        <i class="fa-solid fa-briefcase"></i>
 
         <h3>ERP Model Implementation Intern</h3>
 
@@ -257,8 +410,8 @@
 
         <p>
 
-            Worked on an ERP (Enterprise Resource Planning) system designed for
-            schools and colleges.
+            Worked on an ERP (Enterprise Resource Planning)
+            solution designed for schools and colleges.
 
         </p>
 
@@ -266,13 +419,13 @@
 
             <li>Developed ERP modules using Python.</li>
 
-            <li>Designed responsive web pages using HTML, CSS and JavaScript.</li>
+            <li>Designed responsive web pages using HTML, CSS & JavaScript.</li>
 
-            <li>Worked with databases for storing student and staff information.</li>
+            <li>Integrated AI chatbot features into ERP.</li>
 
-            <li>Participated in testing and debugging ERP features.</li>
+            <li>Worked with databases for student and staff management.</li>
 
-            <li>Contributed to AI chatbot integration for ERP support.</li>
+            <li>Performed testing, debugging and documentation.</li>
 
         </ul>
 
@@ -282,36 +435,47 @@
 
 <!-- ================= ACHIEVEMENTS ================= -->
 
-<section id="stats">
+<section id="achievements">
 
     <h2 class="title">Achievements</h2>
 
-    <div class="skills-grid">
+    <div class="achievement-grid">
 
-        <div class="skill">
+        <div class="achievement-card">
+
             <h1>10+</h1>
-            <p>Projects</p>
+
+            <p>Projects Completed</p>
+
         </div>
 
-        <div class="skill">
-            <h1>8+</h1>
-            <p>Certificates</p>
-        </div>
+        <div class="achievement-card">
 
-        <div class="skill">
             <h1>100+</h1>
-            <p>Coding Problems</p>
+
+            <p>Programming Problems Solved</p>
+
         </div>
 
-        <div class="skill">
+        <div class="achievement-card">
+
+            <h1>8+</h1>
+
+            <p>Technical Certificates</p>
+
+        </div>
+
+        <div class="achievement-card">
+
             <h1>1</h1>
-            <p>Internship</p>
+
+            <p>Internship Completed</p>
+
         </div>
 
     </div>
 
 </section>
-
 <!-- ================= PROJECTS ================= -->
 
 <section id="projects">
@@ -320,194 +484,241 @@
 
     <div class="project-grid">
 
+        <!-- Project 1 -->
+
         <div class="project-card">
 
-            <img src="images/project1.png" alt="Project">
+            <div class="project-content">
 
-            <h3>Suspicious Activity Detection</h3>
+                <h3>Suspicious Activity Detection using YOLO11 Pose & XGBoost</h3>
 
-            <p>
+                <p>
 
-                AI-based surveillance system using
-                YOLO11 Pose Estimation and XGBoost
-                to detect suspicious human activities.
+                    Developed an AI-powered surveillance system capable of
+                    detecting suspicious human activities using YOLO11 Pose
+                    Estimation and XGBoost. The system identifies abnormal
+                    movements from CCTV footage and improves security through
+                    intelligent activity recognition.
 
-            </p>
+                </p>
 
-            <a href="https://github.com/amarnath312004-ai" target="_blank">
+                <div class="tech-stack">
 
-                GitHub Repository
+                    <span>Python</span>
+                    <span>YOLO11</span>
+                    <span>XGBoost</span>
+                    <span>OpenCV</span>
+                    <span>Machine Learning</span>
 
-            </a>
+                </div>
+
+                <a href="https://github.com/amarnath312004-ai"
+                    target="_blank"
+                    class="project-btn">
+
+                    <i class="fab fa-github"></i>
+
+                    GitHub
+
+                </a>
+
+            </div>
 
         </div>
 
+        <!-- Project 2 -->
+
         <div class="project-card">
 
-            <img src="images/project2.png" alt="Project">
+            <div class="project-content">
 
-            <h3>AI Career Hub</h3>
+                <h3>AI Career Hub</h3>
 
-            <p>
+                <p>
 
-                AI-powered career guidance platform for
-                resume building, career recommendations,
-                interview preparation and skill tracking.
+                    AI-powered career development platform that provides
+                    resume analysis, career recommendations,
+                    interview preparation, skill tracking,
+                    and personalized learning suggestions.
 
-            </p>
+                </p>
 
-            <a href="https://github.com/amarnath312004-ai" target="_blank">
+                <div class="tech-stack">
 
-                GitHub Repository
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
 
-            </a>
+                </div>
+
+                <a href="https://github.com/amarnath312004-ai"
+                    target="_blank"
+                    class="project-btn">
+
+                    <i class="fab fa-github"></i>
+
+                    GitHub
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Project 3 -->
+
+        <div class="project-card">
+
+            <div class="project-content">
+
+                <h3>SportScout – AI Sports Performance Analysis</h3>
+
+                <p>
+
+                    SportScout is an AI-powered sports performance
+                    analysis platform that uses Computer Vision,
+                    MediaPipe Pose Estimation, and Machine Learning
+                    to analyze athletes' movements in real-time
+                    or from uploaded videos.
+
+                    The system automatically detects body posture,
+                    counts exercise repetitions,
+                    evaluates athletic performance,
+                    calculates performance scores,
+                    and securely stores user data
+                    using Firebase Firestore.
+
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+
+                    <span>Flask</span>
+
+                    <span>MediaPipe</span>
+
+                    <span>OpenCV</span>
+
+                    <span>Firebase</span>
+
+                    <span>Machine Learning</span>
+
+                </div>
+
+                <a href="https://github.com/amarnath312004-ai/Sportscout"
+                    target="_blank"
+                    class="project-btn">
+
+                    <i class="fab fa-github"></i>
+
+                    GitHub Repository
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Project 4 -->
+
+        <div class="project-card">
+
+            <div class="project-content">
+
+                <h3>Buddy – Personal AI Voice Assistant</h3>
+
+                <p>
+
+                    Buddy is a Python-based AI Voice Assistant
+                    that automates everyday computer tasks
+                    using voice commands.
+
+                    It understands speech
+                    and performs actions such as
+                    opening applications,
+                    searching the web,
+                    controlling system settings,
+                    taking screenshots,
+                    accessing the webcam,
+                    and many more productivity tasks.
+
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+
+                    <span>Speech Recognition</span>
+
+                    <span>Pyttsx3</span>
+
+                    <span>Automation</span>
+
+                    <span>OpenCV</span>
+
+                </div>
+
+                <a href="https://github.com/amarnath312004-ai/Buddy-Personal-Assistant"
+                    target="_blank"
+                    class="project-btn">
+
+                    <i class="fab fa-github"></i>
+
+                    GitHub Repository
+
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
 </section>
-
-<!-- ================= CERTIFICATES ================= -->
-
-<section id="certificates">
-
-    <h2 class="title">Certificates</h2>
-
-    <div class="certificate-grid">
-
-        <img src="images/certificate1.jpg" alt="Certificate">
-
-        <img src="images/certificate2.jpg" alt="Certificate">
-
-        <img src="images/certificate3.jpg" alt="Certificate">
-
-        <img src="images/certificate4.jpg" alt="Certificate">
-
-    </div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
 <section id="contact">
 
     <h2 class="title">Contact Me</h2>
 
-    <form>
+    <div class="contact-container">
 
-        <input
-            type="text"
-            placeholder="Your Name"
-            required>
+        <div class="contact-info">
 
-        <input
-            type="email"
-            placeholder="Email Address"
-            required>
+            <h3>Let's Connect</h3>
 
-        <input
-            type="text"
-            placeholder="Subject"
-            required>
+            <p>I am available for internships and software development opportunities.</p>
 
-        <textarea
-            rows="6"
-            placeholder="Write your message..."
-            required></textarea>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>amarnath312004@gmail.com</span>
+            </div>
 
-        <button type="submit">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+91 9597005649</span>
+            </div>
 
-            Send Message
+            <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <span>Tamil Nadu, India</span>
+            </div>
 
-        </button>
+        </div>
 
-    </form>
+        <form class="contact-form">
 
-    <div class="contact-info">
+            <input type="text" placeholder="Your Name" required>
 
-        <h3>Get In Touch</h3>
+            <input type="email" placeholder="Your Email" required>
 
-        <p>
+            <textarea placeholder="Your Message" rows="6" required></textarea>
 
-            <i class="fa-solid fa-envelope"></i>
+            <button class="btn" type="submit">Send Message</button>
 
-            yourmail@gmail.com
-
-        </p>
-
-        <p>
-
-            <i class="fa-solid fa-phone"></i>
-
-            +91 95970 05649
-
-        </p>
-
-        <p>
-
-            <i class="fa-solid fa-location-dot"></i>
-
-            Tamil Nadu, India
-
-        </p>
+        </form>
 
     </div>
 
 </section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <h2>Amarnath M</h2>
-
-    <p>
-
-        Artificial Intelligence & Data Science Student
-
-    </p>
-
-    <div class="social-icons">
-
-        <a href="https://github.com/amarnath312004-ai" target="_blank">
-
-            <i class="fab fa-github"></i>
-
-        </a>
-
-        <a href="https://www.linkedin.com/in/amarnath-m-8aa44235b " target="_blank">
-
-            <i class="fab fa-linkedin"></i>
-
-        </a>
-
-        <a href="mailto:amarnath312004mail@gmail.com">
-
-            <i class="fas fa-envelope"></i>
-
-        </a>
-
-    </div>
-
-    <p style="margin-top:20px;">
-
-        © 2026 Amarnath M. All Rights Reserved.
-
-    </p>
-
-</footer>
-
-<!-- Scroll To Top Button -->
-
-<button id="topBtn">
-
-    <i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>

@@ -1,205 +1,390 @@
-// ================================
+// ==========================================
 // MOBILE MENU
-// ================================
+// ==========================================
 
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
+const menu = document.querySelector("#menu");
+const navbar = document.querySelector(".navbar");
 
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+menu.onclick = () => {
+
+    navbar.classList.toggle("active");
+
+};
+
+// Close menu when clicking a link
+
+document.querySelectorAll(".navbar a").forEach(link => {
+
+    link.onclick = () => {
+
+        navbar.classList.remove("active");
+
+    };
+
 });
 
-// Close menu after clicking a link
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
-});
+// ==========================================
+// DARK MODE
+// ==========================================
 
-// ================================
-// DARK / LIGHT MODE
-// ================================
+const themeToggle = document.querySelector("#theme-toggle");
 
-const themeBtn = document.getElementById("theme-btn");
+themeToggle.onclick = () => {
 
-themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
 
-    document.body.classList.toggle("light");
+    if(document.body.classList.contains("dark-mode")){
 
-    const icon = themeBtn.querySelector("i");
+        localStorage.setItem("theme","dark");
 
-    if(document.body.classList.contains("light")){
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
+        themeToggle.innerHTML='<i class="fas fa-sun"></i>';
+
+    }else{
+
+        localStorage.setItem("theme","light");
+
+        themeToggle.innerHTML='<i class="fas fa-moon"></i>';
+
     }
-    else{
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
+
+};
+
+// Load saved theme
+
+window.onload = () => {
+
+    if(localStorage.getItem("theme")==="dark"){
+
+        document.body.classList.add("dark-mode");
+
+        themeToggle.innerHTML='<i class="fas fa-sun"></i>';
+
     }
 
-});
+};
 
-// ================================
+// ==========================================
 // TYPING ANIMATION
-// ================================
+// ==========================================
 
-const words = [
-    "AI & Data Science Student",
-    "Python Developer",
-    "Web Developer",
-    "Machine Learning Enthusiast",
-    "Software Engineer"
+const words=[
+
+"Artificial Intelligence & Data Science Student",
+
+"Python Developer",
+
+"Machine Learning Enthusiast",
+
+"Computer Vision Developer",
+
+"Full Stack Web Developer"
+
 ];
 
-let wordIndex = 0;
-let letterIndex = 0;
-let deleting = false;
+let wordIndex=0;
 
-const typing = document.getElementById("typing");
+let charIndex=0;
+
+let isDeleting=false;
+
+const typing=document.querySelector(".typing");
 
 function typeEffect(){
 
-    const current = words[wordIndex];
+    const current=words[wordIndex];
 
-    if(!deleting){
+    if(!isDeleting){
 
-        typing.textContent = current.substring(0, letterIndex);
+        typing.textContent=current.substring(0,charIndex++);
 
-        letterIndex++;
+    }else{
 
-        if(letterIndex > current.length){
-            deleting = true;
-            setTimeout(typeEffect,1500);
-            return;
+        typing.textContent=current.substring(0,charIndex--);
+
+    }
+
+    let speed=120;
+
+    if(isDeleting){
+
+        speed=60;
+
+    }
+
+    if(!isDeleting && charIndex===current.length+1){
+
+        speed=1500;
+
+        isDeleting=true;
+
+    }
+
+    if(isDeleting && charIndex===0){
+
+        isDeleting=false;
+
+        wordIndex++;
+
+        if(wordIndex===words.length){
+
+            wordIndex=0;
+
         }
 
     }
 
-    else{
-
-        typing.textContent = current.substring(0, letterIndex);
-
-        letterIndex--;
-
-        if(letterIndex < 0){
-
-            deleting = false;
-
-            wordIndex++;
-
-            if(wordIndex >= words.length){
-                wordIndex = 0;
-            }
-
-        }
-
-    }
-
-    setTimeout(typeEffect, deleting ? 50 : 120);
+    setTimeout(typeEffect,speed);
 
 }
 
 typeEffect();
 
-// ================================
-// SCROLL TO TOP BUTTON
-// ================================
+// ==========================================
+// SCROLL TO TOP
+// ==========================================
 
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 300){
-        topBtn.style.display = "block";
-    }
-    else{
-        topBtn.style.display = "none";
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-// ================================
-// ACTIVE NAVIGATION LINK
-// ================================
-
-const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".nav-links a");
+const topBtn=document.getElementById("topBtn");
 
 window.addEventListener("scroll",()=>{
 
-    let current = "";
+    if(window.scrollY>400){
 
-    sections.forEach(section=>{
+        topBtn.style.display="block";
 
-        const sectionTop = section.offsetTop - 120;
+    }else{
 
-        if(window.scrollY >= sectionTop){
-            current = section.getAttribute("id");
+        topBtn.style.display="none";
+
+    }
+
+});
+
+topBtn.onclick=()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+};
+
+// ==========================================
+// STICKY HEADER
+// ==========================================
+
+const header=document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>80){
+
+        header.style.boxShadow="0 5px 20px rgba(0,0,0,.15)";
+
+    }else{
+
+        header.style.boxShadow="none";
+
+    }
+
+});
+// ==========================================
+// SCROLL REVEAL ANIMATION
+// ==========================================
+
+const revealElements = document.querySelectorAll(
+    "section, .project-card, .skill-card, .education-card, .certificate-card, .achievement-card, .internship-card"
+);
+
+function revealOnScroll() {
+
+    const windowHeight = window.innerHeight;
+
+    revealElements.forEach((element) => {
+
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+
+            element.classList.add("show");
+
         }
 
     });
 
-    navItems.forEach(link=>{
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
+
+
+// ==========================================
+// ACTIVE NAVIGATION LINK
+// ==========================================
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach((section) => {
+
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach((link) => {
 
         link.classList.remove("active");
 
-        if(link.getAttribute("href")==="#" + current){
+        if (link.getAttribute("href") === "#" + current) {
+
             link.classList.add("active");
-        }
-
-    });
-
-});
-
-// ================================
-// FADE IN ANIMATION ON SCROLL
-// ================================
-
-const observer = new IntersectionObserver(entries=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
 
         }
 
     });
 
-},{
-    threshold:0.2
 });
 
-document.querySelectorAll("section").forEach(sec=>{
 
-    sec.classList.add("hidden");
-
-    observer.observe(sec);
-
-});
-
-// ================================
+// ==========================================
 // CONTACT FORM
-// ================================
+// ==========================================
 
-const form = document.querySelector("form");
+const form = document.querySelector(".contact-form");
 
-form.addEventListener("submit",(e)=>{
+if (form) {
 
-    e.preventDefault();
+    form.addEventListener("submit", function (e) {
 
-    alert("Thank you! Your message has been sent successfully.");
+        e.preventDefault();
 
-    form.reset();
+        alert("Thank you! Your message has been received.");
+
+        form.reset();
+
+    });
+
+}
+
+
+// ==========================================
+// ACHIEVEMENT COUNTER
+// ==========================================
+
+const counters = document.querySelectorAll(".achievement-card h1");
+
+const startCounter = () => {
+
+    counters.forEach(counter => {
+
+        const target = parseInt(counter.innerText);
+
+        if (isNaN(target)) return;
+
+        let count = 0;
+
+        const speed = target / 60;
+
+        const update = () => {
+
+            count += speed;
+
+            if (count < target) {
+
+                counter.innerText = Math.floor(count) + "+";
+
+                requestAnimationFrame(update);
+
+            } else {
+
+                counter.innerText = target + "+";
+
+            }
+
+        };
+
+        update();
+
+    });
+
+};
+
+startCounter();
+
+
+// ==========================================
+// IMAGE FADE-IN
+// ==========================================
+
+const images = document.querySelectorAll("img");
+
+images.forEach((img) => {
+
+    img.onload = () => {
+
+        img.style.opacity = "1";
+
+        img.style.transition = "0.6s";
+
+    };
 
 });
+
+
+// ==========================================
+// PAGE LOADER
+// ==========================================
+
+window.addEventListener("load", () => {
+
+    const loader = document.querySelector(".loader");
+
+    if (loader) {
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        }, 500);
+
+    }
+
+
+
+// ==========================================
+// COPYRIGHT YEAR
+// ==========================================
+
+const copyright = document.querySelector(".copyright");
+
+if (copyright) {
+
+    const year = new Date().getFullYear();
+
+    copyright.innerHTML = `© ${year} Amarnath M. All Rights Reserved.`;
+
+}
+
+
+// ==========================================
+// CONSOLE MESSAGE
+// ==========================================
+
+console.log("%cWelcome to Amarnath M Portfolio", "color:#00bcd4;font-size:18px;font-weight:bold;");
+console.log("%cDesigned using HTML, CSS & JavaScript", "color:green;font-size:14px;");
